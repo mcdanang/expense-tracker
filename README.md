@@ -4,7 +4,7 @@
 
 Install required modules: `npm install`  
 Start Server: `nodemon index.js`  
-Set PORT at .env: `PORT=2000`
+Set PORT at ".env" file: `PORT=2000`  
 API URL: `localhost:2000/expenses`  
 
 **Available HTTP Method:**  
@@ -56,8 +56,8 @@ API URL: `localhost:2000/expenses`
 
 > **Put into request body as JSON as following**  
 &nbsp;{  
-&nbsp;&nbsp;"nominal": 155000  
+&nbsp;&nbsp;"nominal": 25000  
 &nbsp;}  
 
-- `localhost:2000/expenses/6`  
+- `localhost:2000/expenses/2`  
 &nbsp;  
