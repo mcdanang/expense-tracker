@@ -45,10 +45,13 @@ export const addNewExpense = async (req, res) => {
 
 export const editExpense = async (req, res) => {
   const index = getExpenseIndexByID(data, req.params.id);
-  if (index == -1 || Object.keys(req.body).length === 0) {
+  const keys = Object.keys(req.body);
+  if (index == -1 || keys.length === 0) {
     res.status(400).send('Bad Request');
   } else {
-    data[index] = req.body;
+    keys.forEach((key) => {
+      data[index][key] = req.body[key];
+    });
     fs.writeFileSync("./data/expense.json", JSON.stringify(data));
     res.status(200).send(`Data for id ${req.params.id} has been updated`);
   }
